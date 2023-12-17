@@ -10,7 +10,7 @@ pipeline {
         }
        stage('Deploy') {
             steps {
-                git credentialsId: 'git', url: 'https://github.com/sagar-bhavsar1/sagar-bhavsar1.git'
+                echo 'master'
             
             }
         }
