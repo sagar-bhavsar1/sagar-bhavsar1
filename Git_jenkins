@@ -1,0 +1,10 @@
+pipeline{
+    agent any
+    stages{
+        stage("Git"){
+            steps{
+                git credentialsId: 'Git_credential', url: 'https://github.com/sagar-bhavsar1/sagar-bhavsar1.git'   
+            }
+        }
+    }
+}
