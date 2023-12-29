@@ -1,9 +1,17 @@
 pipeline{
     agent any
+    environment{
+        PATH = "/opt/maven3/bin:$PATH"
+    }
     stages{
         stage("Git"){
             steps{
                 git credentialsId: 'Git_credential', url: 'https://github.com/sagar-bhavsar1/sagar-bhavsar1.git'   
+            }
+        }
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean package"
             }
         }
     }
